@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Install and use the Shutter Trail GPX Sync plug-in to geotag photos in Adobe Lightroom Classic.">
+  <title>Lightroom GPX Sync Plug-in · Shutter Trail</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="brand" href="../">Shutter Trail</a>
+      <nav aria-label="Primary">
+        <a href="./" aria-current="page">Lightroom plug-in</a>
+        <a href="../support/">Support</a>
+        <a href="../privacy/">Privacy</a>
+        <a href="../terms/">Terms</a>
+      </nav>
+    </header>
+    <main>
+      <p class="eyebrow">Lightroom Classic plug-in</p>
+      <h1>Match photos to GPX tracks, offset by offset.</h1>
+      <p class="lede">Shutter Trail also provides a free Lightroom Classic plug-in that automatically geotags selected photos by matching their capture times to timestamped points in one or more GPX tracks. It is open source and hosted in <a href="https://github.com/infiz/shuttertrail-lightroom-gpx-sync" rel="noopener">infiz/shuttertrail-lightroom-gpx-sync</a> on GitHub.</p>
+      <div class="actions">
+        <a class="button" href="https://github.com/infiz/shuttertrail-lightroom-gpx-sync/releases/latest" rel="noopener">Download the latest release</a>
+        <a class="button secondary" href="https://github.com/infiz/shuttertrail-lightroom-gpx-sync" rel="noopener">View the source on GitHub</a>
+      </div>
+
+      <article class="card">
+        <h2>Why use the plug-in?</h2>
+        <p>Lightroom Classic’s built-in Map workflow can load a GPX tracklog, but it does not automatically read the UTC offset embedded in each selected photo. Instead, you adjust photo time with a single manual offset before applying the track locations.</p>
+        <p>That extra step is easy to get wrong, and one offset may not work for a selection containing photos from cameras set to different time zones. The result can be a location matched to the wrong point in the journey.</p>
+        <p>The plug-in reads each photo’s capture time, subsecond value, and embedded UTC offset with ExifTool. If an offset is missing, it asks what to use and suggests the most common offset found in the selection. It then finds the nearest timestamped GPX point, shows a summary for review, and updates the Lightroom catalog without modifying the original photo files.</p>
+
+        <h2>Before installing</h2>
+        <ul>
+          <li>Use Adobe Lightroom Classic with Lightroom SDK 6.0 support or newer.</li>
+          <li>Use GPX tracks whose timestamps include <code>Z</code> or an explicit numeric UTC offset.</li>
+          <li>On macOS, install ExifTool first. In Terminal, run <code>brew install exiftool</code>. If needed, install Homebrew from <a href="https://brew.sh/" rel="noopener">brew.sh</a>.</li>
+          <li>On Windows, the plug-in includes a portable ExifTool runtime.</li>
+        </ul>
+
+        <h2>Install the plug-in</h2>
+        <ol>
+          <li><a href="https://github.com/infiz/shuttertrail-lightroom-gpx-sync/releases/latest" rel="noopener">Open the latest release</a>, download its source-code ZIP, and extract it.</li>
+          <li>Move the complete <code>shuttertrail-lightroom-gpx-sync.lrplugin</code> folder to a permanent location. Keep all of its files together.</li>
+          <li>In Lightroom Classic, choose <strong>File → Plug-In Manager</strong>.</li>
+          <li>Select <strong>Add</strong>, choose the <code>shuttertrail-lightroom-gpx-sync.lrplugin</code> folder, and confirm the plug-in is enabled.</li>
+        </ol>
+
+        <h2>Geotag selected photos</h2>
+        <ol>
+          <li>In Lightroom Classic’s Library module, select the photos to geotag. Video files are ignored.</li>
+          <li>Choose <strong>Library → Plug-in Extras → Sync selected photos with GPX…</strong>.</li>
+          <li>Select one or more <code>.gpx</code> files, then choose <strong>Use GPX Files</strong>.</li>
+          <li>If a photo has no embedded UTC offset, accept or change the suggested offset. Apply it to that photo, that camera, or all remaining photos without an offset—or skip those photos.</li>
+          <li>Review the matching summary. Existing GPS data is preserved by default; enable replacement only when you intend to overwrite it.</li>
+          <li>Confirm to write the matched latitude, longitude, and available altitude to the Lightroom catalog.</li>
+        </ol>
+        <p>The closest GPX point must be within one hour of the photo’s timestamp. The plug-in does not interpolate between track points, and it rejects GPX timestamps that have no timezone information.</p>
+
+        <div class="actions">
+          <a class="button" href="https://github.com/infiz/shuttertrail-lightroom-gpx-sync/releases/latest" rel="noopener">Get the latest release</a>
+          <a class="button secondary" href="https://github.com/infiz/shuttertrail-lightroom-gpx-sync#readme" rel="noopener">Read full documentation</a>
+        </div>
+      </article>
+    </main>
+    <footer>© 2026 Shutter Trail · <a href="../support/">Support</a> · <a href="../terms/">Terms of Use</a></footer>
+  </div>
+</body>
+</html>
