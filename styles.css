@@ -11,7 +11,10 @@
 
 * { box-sizing: border-box; }
 
-html { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+html {
+  visibility: visible;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
 
 body {
   margin: 0;
@@ -39,18 +42,20 @@ header {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   flex: 0 0 auto;
   color: var(--text);
   font-weight: 750;
+  line-height: 1;
   text-decoration: none;
   letter-spacing: -0.02em;
 }
 .brand-icon {
   display: block;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  margin-right: 9px;
+  border-radius: 6px;
 }
 nav { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.94rem; }
 nav a { color: var(--muted); text-decoration: none; }
