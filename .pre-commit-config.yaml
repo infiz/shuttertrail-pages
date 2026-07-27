@@ -20,6 +20,7 @@ repos:
         types_or:
           - css
           - html
+          - javascript
           - json
           - markdown
           - yaml
