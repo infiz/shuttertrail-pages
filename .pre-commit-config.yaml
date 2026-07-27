@@ -1,0 +1,30 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=500]
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: prettier --write --ignore-unknown
+        language: node
+        additional_dependencies:
+          - prettier@3.9.6
+        types_or:
+          - css
+          - html
+          - json
+          - markdown
+          - yaml
+      - id: format-xml
+        name: format xml
+        entry: scripts/format-xml.sh
+        language: script
+        types: [xml]

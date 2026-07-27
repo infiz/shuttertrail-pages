@@ -1,84 +1,158 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Learn how to geotag photos from multiple cameras with one GPX file while keeping camera clocks and UTC offsets aligned.">
-  <meta name="robots" content="index, follow">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Geotag Multiple Cameras with One GPX File">
-  <meta property="og:description" content="Use one recorded GPS trail for every camera you carry.">
-  <meta property="og:url" content="https://infiz.github.io/shuttertrail-pages/guides/multiple-cameras-utc-offsets/">
-  <meta property="og:image" content="https://infiz.github.io/shuttertrail-pages/images/og-shutter-trail-v2.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>Geotag Multiple Cameras with One GPX File · Shutter Trail</title>
-  <link rel="canonical" href="https://infiz.github.io/shuttertrail-pages/guides/multiple-cameras-utc-offsets/">
-  <link rel="stylesheet" href="../../styles.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-92F6QVJRV9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-92F6QVJRV9');
-  </script>
-</head>
-<body>
-  <div class="shell">
-    <header>
-      <a class="brand" href="../../"><img class="brand-icon" src="../../images/app-icon.png" alt="" width="24" height="24">Shutter Trail</a>
-      <nav aria-label="Primary">
-        <a class="nav-download" href="https://apps.apple.com/us/app/shutter-trail/id6792596736">Download app</a>
-        <a href="../" aria-current="page">Guides</a>
-        <a href="../../lightroom-gpx-sync/">Lightroom plug-in</a>
-        <a href="../../support/">Support</a>
-        <a href="../../privacy/">Privacy</a>
-        <a href="../../terms/">Terms</a>
-      </nav>
-    </header>
-    <main>
-      <div class="article-header">
-        <p class="eyebrow">Multiple-camera guide</p>
-        <h1>How to geotag multiple cameras with one GPX file.</h1>
-        <p class="lede">Record one private GPS trail on iPhone while you shoot with every camera you carry. Afterward, use the same GPX file to match each body’s photos in Lightroom Classic.</p>
-      </div>
-      <article class="card article-body">
-        <h2>Why one trail is enough</h2>
-        <p>A GPX file records where your iPhone was at a series of exact times. Every camera photo also has a capture time. When the phone stays with the photographer and the camera clocks are accurate, one location timeline can serve photos from multiple bodies without Bluetooth pairing or manufacturer companion apps.</p>
-
-        <h2>Before the shoot</h2>
-        <ol>
-          <li>Set every camera to the correct local date, time, and time zone.</li>
-          <li>Compare the clocks across all camera bodies and correct any visible drift.</li>
-          <li>Start Shutter Trail before the first photo and keep the iPhone with the photographer.</li>
-          <li>Take a reference photo of an accurate clock with each camera if you want an easy audit point later.</li>
-        </ol>
-
-        <h2>Record once while every camera shoots</h2>
-        <p>Shutter Trail does not connect to a camera. It records the iPhone’s location independently, so switching bodies or using two cameras at the same time does not interrupt the trail. Use High Accuracy when consistent background coverage matters, then turn it off when the shoot ends.</p>
-
-        <h2>Export one standard GPX file</h2>
-        <p>After the shoot, create a Trip for the relevant time range and export it as GPX. You can use that same file for every camera represented in the Lightroom selection.</p>
-
-        <h2>Match the photos in Lightroom Classic</h2>
-        <p>Select photos from one camera or several, then choose <strong>Library → Plug-in Extras → Sync selected photos with GPX…</strong>. The free Shutter Trail plug-in reads the capture time and stored UTC offset for each photo before proposing the nearest GPX point.</p>
-
-        <h2>Handle missing offsets by camera</h2>
-        <p>If a photo has no embedded UTC offset, the plug-in asks what to use. You can apply the answer to that photo, to photos from the same camera, or to all remaining photos without an offset. This is useful when different camera bodies write different metadata.</p>
-
-        <div class="tip">
-          <p><strong>Tip:</strong> Do not assume two camera clocks agree because their displays show the same minute. Even a small difference can matter when you move quickly, so compare seconds before an important shoot.</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Learn how to geotag photos from multiple cameras with one GPX file, even when a camera remains on a previous location’s local time."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Geotag Multiple Cameras with One GPX File" />
+    <meta
+      property="og:description"
+      content="Use one recorded GPS trail for every camera you carry."
+    />
+    <meta
+      property="og:url"
+      content="https://infiz.github.io/shuttertrail-pages/guides/multiple-cameras-utc-offsets/"
+    />
+    <meta
+      property="og:image"
+      content="https://infiz.github.io/shuttertrail-pages/images/og-shutter-trail-v2.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Geotag Multiple Cameras with One GPX File · Shutter Trail</title>
+    <link
+      rel="canonical"
+      href="https://infiz.github.io/shuttertrail-pages/guides/multiple-cameras-utc-offsets/"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-92F6QVJRV9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-92F6QVJRV9");
+    </script>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <a class="brand" href="../../"
+          ><img
+            class="brand-icon"
+            src="../../images/app-icon.png"
+            alt=""
+            width="24"
+            height="24"
+          />Shutter Trail</a
+        >
+        <nav aria-label="Primary">
+          <a class="nav-download" href="https://apps.apple.com/us/app/shutter-trail/id6792596736"
+            >Download app</a
+          >
+          <a href="../" aria-current="page">Guides</a>
+          <a href="../../lightroom-gpx-sync/">Lightroom plug-in</a>
+          <a href="../../support/">Support</a>
+          <a href="../../privacy/">Privacy</a>
+          <a href="../../terms/">Terms</a>
+        </nav>
+      </header>
+      <main>
+        <div class="article-header">
+          <p class="eyebrow">Multiple-camera guide</p>
+          <h1>How to geotag multiple cameras with one GPX file.</h1>
+          <p class="lede">
+            Record one private GPS trail on iPhone while you shoot with every camera you carry.
+            Afterward, use the same GPX file to match each body’s photos in Lightroom Classic.
+          </p>
         </div>
+        <article class="card article-body">
+          <h2>Why one trail is enough</h2>
+          <p>
+            A GPX file records where your iPhone was at a series of exact times. Every camera photo
+            also has a capture time. One location timeline can serve photos from multiple bodies
+            without Bluetooth pairing or manufacturer companion apps—even when a camera’s stored
+            time-zone offset needs correction.
+          </p>
 
-        <h2>Review before adding locations</h2>
-        <p>Check the matching summary for unmatched photos, missing offsets, or a camera clock that appears consistently early or late. Existing GPS coordinates are preserved by default and are replaced only when you explicitly choose to overwrite them.</p>
+          <h2>Before the shoot</h2>
+          <ol>
+            <li>
+              Compare the clocks across all camera bodies so you know whether one is running early
+              or late.
+            </li>
+            <li>
+              Start Shutter Trail before the first photo and keep the iPhone with the photographer.
+            </li>
+            <li>
+              Take a reference photo of an accurate clock with each camera if you want an easy audit
+              point later.
+            </li>
+          </ol>
 
-        <div class="actions article-cta">
-          <a class="button" href="https://apps.apple.com/us/app/shutter-trail/id6792596736">Download free</a>
-          <a class="button secondary" href="../../lightroom-gpx-sync/">Get the free Lightroom plug-in</a>
-        </div>
-      </article>
-    </main>
-    <footer>© 2026 Shutter Trail · <a href="../">More guides</a> · <a href="../../terms/">Terms of Use</a></footer>
-  </div>
-</body>
+          <h2>Record once while every camera shoots</h2>
+          <p>
+            Shutter Trail does not connect to a camera. It records the iPhone’s location
+            independently, so switching bodies or using two cameras at the same time does not
+            interrupt the trail. Use High Accuracy when consistent background coverage matters, then
+            turn it off when the shoot ends.
+          </p>
+
+          <h2>Export one standard GPX file</h2>
+          <p>
+            After the shoot, create a Trip for the relevant time range and export it as GPX. You can
+            use that same file for every camera represented in the Lightroom selection.
+          </p>
+
+          <h2>Match the photos in Lightroom Classic</h2>
+          <p>
+            Select photos from one camera or several, then choose
+            <strong>Library → Plug-in Extras → Sync selected photos with GPX…</strong>. The free
+            Shutter Trail plug-in reads the capture time and stored UTC offset for each photo before
+            proposing the nearest GPX point.
+          </p>
+
+          <h2>Keep shooting across time zones</h2>
+          <p>
+            A camera can remain on a previous location’s local time and still match correctly, as
+            long as its clock remains accurate for that previous location. You do not need to change
+            the camera’s time zone or complete an extra time-zone step during matching.
+          </p>
+
+          <div class="tip">
+            <p>
+              <strong>Tip:</strong> Do not assume two camera clocks agree because their displays
+              show the same minute. Even a small difference can matter when you move quickly, so
+              compare seconds before an important shoot.
+            </p>
+          </div>
+
+          <h2>Review before adding locations</h2>
+          <p>
+            Check the matching summary for unmatched photos, matches far from the trail, or a camera
+            clock that appears consistently early or late. Existing GPS coordinates are preserved by
+            default and are replaced only when you explicitly choose to overwrite them.
+          </p>
+
+          <div class="actions article-cta">
+            <a class="button" href="https://apps.apple.com/us/app/shutter-trail/id6792596736"
+              >Download free</a
+            >
+            <a class="button secondary" href="../../lightroom-gpx-sync/"
+              >Get the free Lightroom plug-in</a
+            >
+          </div>
+        </article>
+      </main>
+      <footer>
+        © 2026 Shutter Trail · <a href="../">More guides</a> ·
+        <a href="../../terms/">Terms of Use</a>
+      </footer>
+    </div>
+  </body>
 </html>

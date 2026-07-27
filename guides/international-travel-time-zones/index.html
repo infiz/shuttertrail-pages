@@ -1,75 +1,134 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Learn how UTC offsets keep photo geotagging accurate when international travel takes you across time zones.">
-  <meta name="robots" content="index, follow">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Geotag Photos Accurately Across Time Zones">
-  <meta property="og:description" content="Understand how UTC offsets connect local camera time to recorded GPX locations.">
-  <meta property="og:url" content="https://infiz.github.io/shuttertrail-pages/guides/international-travel-time-zones/">
-  <meta property="og:image" content="https://infiz.github.io/shuttertrail-pages/images/og-shutter-trail-v2.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>Geotag Photos Across Time Zones · Shutter Trail</title>
-  <link rel="canonical" href="https://infiz.github.io/shuttertrail-pages/guides/international-travel-time-zones/">
-  <link rel="stylesheet" href="../../styles.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-92F6QVJRV9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-92F6QVJRV9');
-  </script>
-</head>
-<body>
-  <div class="shell">
-    <header>
-      <a class="brand" href="../../"><img class="brand-icon" src="../../images/app-icon.png" alt="" width="24" height="24">Shutter Trail</a>
-      <nav aria-label="Primary">
-        <a class="nav-download" href="https://apps.apple.com/us/app/shutter-trail/id6792596736">Download app</a>
-        <a href="../" aria-current="page">Guides</a>
-        <a href="../../lightroom-gpx-sync/">Lightroom plug-in</a>
-        <a href="../../support/">Support</a>
-        <a href="../../privacy/">Privacy</a>
-        <a href="../../terms/">Terms</a>
-      </nav>
-    </header>
-    <main>
-      <div class="article-header">
-        <p class="eyebrow">International travel guide</p>
-        <h1>Geotag photos accurately across time zones.</h1>
-        <p class="lede">A photo and a GPS point can describe the same instant using different local times. The UTC offset keeps them aligned as your journey moves between time zones.</p>
-      </div>
-      <article class="card article-body">
-        <h2>Local camera time is only part of the story</h2>
-        <p>Imagine taking a photo at 9:00 a.m. in California and another at 9:00 a.m. after traveling to New York. The clock readings look identical, but they describe different instants. A UTC offset such as −08:00 or −05:00 supplies the missing time-zone context.</p>
-
-        <h2>Why international travel makes this harder</h2>
-        <p>Camera clocks usually display local time. After a flight or border crossing, changing the clock without preserving the correct time-zone offset—or leaving it unchanged without accounting for that choice—can move a photo hours away from the correct GPS point.</p>
-
-        <h2>How the Shutter Trail workflow handles offsets</h2>
-        <ol>
-          <li>The GPX track provides timestamped locations in an unambiguous time format.</li>
-          <li>The Lightroom plug-in reads each photo’s capture time and embedded UTC offset using ExifTool.</li>
-          <li>Each photo is converted to a comparable instant before the nearest track point is selected.</li>
-          <li>If an offset is missing, the plug-in asks what to use and can apply that choice by photo or camera.</li>
-        </ol>
-
-        <div class="tip">
-          <p><strong>Tip:</strong> When you arrive in a new time zone, update the camera’s local time and time-zone setting together. Correct source metadata makes every later match easier to audit.</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Learn how UTC offsets keep photo geotagging accurate when international travel takes you across time zones."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Geotag Photos Accurately Across Time Zones" />
+    <meta
+      property="og:description"
+      content="Understand how UTC offsets connect local camera time to recorded GPX locations."
+    />
+    <meta
+      property="og:url"
+      content="https://infiz.github.io/shuttertrail-pages/guides/international-travel-time-zones/"
+    />
+    <meta
+      property="og:image"
+      content="https://infiz.github.io/shuttertrail-pages/images/og-shutter-trail-v2.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Geotag Photos Across Time Zones · Shutter Trail</title>
+    <link
+      rel="canonical"
+      href="https://infiz.github.io/shuttertrail-pages/guides/international-travel-time-zones/"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-92F6QVJRV9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-92F6QVJRV9");
+    </script>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <a class="brand" href="../../"
+          ><img
+            class="brand-icon"
+            src="../../images/app-icon.png"
+            alt=""
+            width="24"
+            height="24"
+          />Shutter Trail</a
+        >
+        <nav aria-label="Primary">
+          <a class="nav-download" href="https://apps.apple.com/us/app/shutter-trail/id6792596736"
+            >Download app</a
+          >
+          <a href="../" aria-current="page">Guides</a>
+          <a href="../../lightroom-gpx-sync/">Lightroom plug-in</a>
+          <a href="../../support/">Support</a>
+          <a href="../../privacy/">Privacy</a>
+          <a href="../../terms/">Terms</a>
+        </nav>
+      </header>
+      <main>
+        <div class="article-header">
+          <p class="eyebrow">International travel guide</p>
+          <h1>Geotag photos accurately across time zones.</h1>
+          <p class="lede">
+            A photo and a GPS point can describe the same instant using different local times. The
+            UTC offset keeps them aligned as your journey moves between time zones.
+          </p>
         </div>
+        <article class="card article-body">
+          <h2>Local camera time is only part of the story</h2>
+          <p>
+            Imagine taking a photo at 9:00 a.m. in California and another at 9:00 a.m. after
+            traveling to New York. The clock readings look identical, but they describe different
+            instants. A UTC offset such as −08:00 or −05:00 supplies the missing time-zone context.
+          </p>
 
-        <h2>Review ambiguous matches</h2>
-        <p>No automated workflow should hide uncertainty. Review photos missing offsets, matches far from a track point, and images captured around daylight-saving or international time-zone changes. If an offset is missing, the plug-in asks what to use before matching the photo.</p>
+          <h2>Why international travel makes this harder</h2>
+          <p>
+            Camera clocks usually display local time, but you do not need to change the camera clock
+            when you arrive in a new time zone. The workflow still works as long as the camera
+            remains accurate for the previous location’s local time. No extra time-zone step is
+            required during matching.
+          </p>
 
-        <div class="actions article-cta">
-          <a class="button" href="../../lightroom-gpx-sync/">Get the free Lightroom plug-in</a>
-          <a class="button secondary" href="https://apps.apple.com/us/app/shutter-trail/id6792596736">Download free</a>
-        </div>
-      </article>
-    </main>
-    <footer>© 2026 Shutter Trail · <a href="../">More guides</a> · <a href="../../terms/">Terms of Use</a></footer>
-  </div>
-</body>
+          <h2>How the Shutter Trail workflow handles offsets</h2>
+          <ol>
+            <li>The GPX track provides timestamped locations in an unambiguous time format.</li>
+            <li>The Lightroom plug-in reads each photo’s capture time and embedded UTC offset.</li>
+            <li>
+              Each photo is converted to a comparable instant before the nearest track point is
+              selected.
+            </li>
+            <li>
+              The workflow accounts for cameras that remain on a previous location’s local time.
+            </li>
+          </ol>
+
+          <div class="tip">
+            <p>
+              <strong>Example:</strong> After flying from California to New York, your camera can
+              remain on California time. As long as that clock is still accurate for California, the
+              photos can still align with the New York GPS trail.
+            </p>
+          </div>
+
+          <h2>Review ambiguous matches</h2>
+          <p>
+            No automated workflow should hide uncertainty. Review unmatched photos, matches far from
+            a track point, and images captured around daylight-saving or international time-zone
+            changes before applying locations.
+          </p>
+
+          <div class="actions article-cta">
+            <a class="button" href="../../lightroom-gpx-sync/">Get the free Lightroom plug-in</a>
+            <a
+              class="button secondary"
+              href="https://apps.apple.com/us/app/shutter-trail/id6792596736"
+              >Download free</a
+            >
+          </div>
+        </article>
+      </main>
+      <footer>
+        © 2026 Shutter Trail · <a href="../">More guides</a> ·
+        <a href="../../terms/">Terms of Use</a>
+      </footer>
+    </div>
+  </body>
 </html>
