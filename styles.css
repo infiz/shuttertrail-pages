@@ -27,7 +27,6 @@ a { color: var(--accent); text-underline-offset: 0.18em; }
 a:hover { text-decoration-thickness: 2px; }
 
 .shell { width: min(760px, calc(100% - 32px)); margin: 0 auto; }
-.home-shell { width: min(1080px, calc(100% - 32px)); }
 
 header {
   display: flex;
