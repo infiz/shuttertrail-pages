@@ -41,6 +41,7 @@ header {
 nav { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.94rem; }
 nav a { color: var(--muted); text-decoration: none; }
 nav a[aria-current="page"] { color: var(--accent); font-weight: 650; }
+nav .nav-download { color: var(--accent); font-weight: 700; }
 
 main { padding: 58px 0 72px; }
 
@@ -83,6 +84,22 @@ ul { padding-left: 1.25rem; }
   text-decoration: none;
 }
 .button.secondary { border: 1px solid var(--border); background: transparent; color: var(--text); }
+.hero-actions { align-items: center; margin-top: 30px; }
+.app-store-button {
+  display: grid;
+  gap: 1px;
+  min-width: 190px;
+  padding: 11px 24px 12px;
+  border-radius: 14px;
+  background: #050706;
+  color: white;
+  line-height: 1;
+  box-shadow: 0 12px 28px rgba(5, 7, 6, 0.2);
+}
+.app-store-button:hover { text-decoration: none; transform: translateY(-1px); }
+.app-store-kicker { font-size: 0.72rem; font-weight: 560; letter-spacing: 0.01em; }
+.app-store-name { font-size: 1.34rem; font-weight: 700; letter-spacing: -0.025em; }
+.hero-secondary-link { padding: 12px 6px; font-weight: 650; }
 
 .showcase { margin-top: 96px; }
 .plugin-callout { margin-top: 96px; }
@@ -154,4 +171,5 @@ footer { padding: 28px 0 40px; border-top: 1px solid var(--border); color: var(-
     --shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
   }
   .button { color: #0d251b; }
+  .app-store-button { color: white; }
 }
