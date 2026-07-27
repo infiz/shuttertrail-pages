@@ -36,7 +36,22 @@ header {
   padding: 24px 0;
 }
 
-.brand { color: var(--text); font-weight: 750; text-decoration: none; letter-spacing: -0.02em; }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  color: var(--text);
+  font-weight: 750;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.brand-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
 nav { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.94rem; }
 nav a { color: var(--muted); text-decoration: none; }
 nav a[aria-current="page"] { color: var(--accent); font-weight: 650; }
