@@ -77,6 +77,24 @@ h2 { margin: 2.25rem 0 0.55rem; font-size: 1.25rem; letter-spacing: -0.025em; }
 h3 { margin: 0; font-size: 1.05rem; letter-spacing: -0.02em; }
 p, li { color: var(--muted); }
 .lede { max-width: 650px; margin: 22px 0 0; font-size: 1.16rem; }
+.hero { max-width: 720px; }
+.trust-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 24px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 620;
+}
+.trust-line li::before {
+  content: "✓";
+  margin-right: 7px;
+  color: var(--accent);
+  font-weight: 800;
+}
 .updated { margin-top: 14px; color: var(--muted); font-size: 0.9rem; }
 
 .card {
@@ -126,7 +144,7 @@ ul { padding-left: 1.25rem; }
 .app-store-name { font-size: 1.34rem; font-weight: 700; letter-spacing: -0.025em; }
 .hero-secondary-link { padding: 12px 6px; font-weight: 650; }
 
-.showcase, .plugin-callout, .benefits, .guide-preview, .social-card-section { margin-top: 96px; }
+.showcase, .workflow, .plugin-callout, .benefits, .guide-preview, .social-card-section { margin-top: 96px; }
 .section-title {
   max-width: 760px;
   margin: 0;
@@ -136,21 +154,49 @@ ul { padding-left: 1.25rem; }
 }
 .section-lede { max-width: 680px; margin: 18px 0 0; font-size: 1.08rem; }
 
-.benefit-grid, .guide-grid {
+.benefit-grid, .guide-grid, .workflow-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   margin-top: 34px;
 }
 
-.benefit-card, .guide-card {
+.benefit-card, .guide-card, .workflow-step {
   padding: 23px;
   border: 1px solid var(--border);
   border-radius: 20px;
   background: var(--surface);
 }
 
-.benefit-card p { margin: 8px 0 0; font-size: 0.92rem; }
+.benefit-card p, .workflow-step p { margin: 8px 0 0; font-size: 0.92rem; }
+.workflow-step { position: relative; padding-top: 64px; }
+.step-number {
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.workflow-note {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px 24px;
+  margin-top: 18px;
+  padding: 20px 23px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+}
+.workflow-note p { margin: 0; font-size: 0.92rem; }
+.workflow-note a { font-weight: 700; white-space: nowrap; }
 .guide-card {
   display: grid;
   gap: 9px;
@@ -249,11 +295,12 @@ footer { padding: 28px 0 40px; border-top: 1px solid var(--border); color: var(-
 @media (max-width: 560px) {
   header { align-items: flex-start; flex-direction: column; gap: 12px; }
   main { padding-top: 38px; }
-  .showcase { margin-top: 72px; }
+  .showcase, .workflow { margin-top: 72px; }
   .plugin-callout { margin-top: 72px; }
   .benefits, .guide-preview, .social-card-section, .download-callout { margin-top: 72px; }
   .social-card-link { border-radius: 18px; }
-  .benefit-grid, .guide-grid { grid-template-columns: 1fr; }
+  .benefit-grid, .guide-grid, .workflow-grid { grid-template-columns: 1fr; }
+  .workflow-note { grid-template-columns: 1fr; }
   .download-callout { align-items: flex-start; flex-direction: column; }
   .screenshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .screenshot-card { border-radius: 18px; }
