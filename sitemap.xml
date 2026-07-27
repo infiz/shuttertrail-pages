@@ -13,6 +13,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://infiz.github.io/shuttertrail-pages/guides/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://infiz.github.io/shuttertrail-pages/guides/geotag-photos-lightroom-gpx/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://infiz.github.io/shuttertrail-pages/guides/multiple-cameras-utc-offsets/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://infiz.github.io/shuttertrail-pages/guides/record-photography-trip/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://infiz.github.io/shuttertrail-pages/support/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn how to geotag photos in Lightroom Classic by matching their capture times to a GPX track recorded during your shoot.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Geotag Photos in Lightroom with GPX">
+  <meta property="og:description" content="Follow the complete record, export, match, and review workflow.">
+  <meta property="og:url" content="https://infiz.github.io/shuttertrail-pages/guides/geotag-photos-lightroom-gpx/">
+  <meta property="og:image" content="https://infiz.github.io/shuttertrail-pages/images/og-shutter-trail.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>How to Geotag Photos in Lightroom with GPX · Shutter Trail</title>
+  <link rel="canonical" href="https://infiz.github.io/shuttertrail-pages/guides/geotag-photos-lightroom-gpx/">
+  <link rel="stylesheet" href="../../styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-92F6QVJRV9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-92F6QVJRV9');
+  </script>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="brand" href="../../">Shutter Trail</a>
+      <nav aria-label="Primary">
+        <a class="nav-download" href="https://apps.apple.com/us/app/shutter-trail/id6792596736">Download app</a>
+        <a href="../">Guides</a>
+        <a href="../../lightroom-gpx-sync/">Lightroom plug-in</a>
+        <a href="../../support/">Support</a>
+      </nav>
+    </header>
+    <main>
+      <div class="article-header">
+        <p class="eyebrow">Lightroom Classic guide</p>
+        <h1>How to geotag photos with a GPX track.</h1>
+        <p class="lede">A GPX track connects where you were with when each photo was taken. With both pieces, Lightroom can add location metadata without your camera needing built-in GPS.</p>
+      </div>
+      <article class="card article-body">
+        <h2>What you need</h2>
+        <ul>
+          <li>An iPhone running Shutter Trail during the shoot.</li>
+          <li>Photos whose camera clock was reasonably accurate.</li>
+          <li>Adobe Lightroom Classic and the free Shutter Trail GPX Sync plug-in.</li>
+        </ul>
+
+        <h2>1. Record the shoot</h2>
+        <p>Start trail recording in Shutter Trail before you begin photographing. Keep your iPhone with you as you move. Use High Accuracy when you need more consistent background coverage, then turn it off after the shoot to conserve battery.</p>
+
+        <h2>2. Create and export a trip</h2>
+        <p>Afterward, create a Trip covering the time range of the shoot. Review the trail, then export the Trip as a GPX file and save it somewhere available to your Mac.</p>
+
+        <h2>3. Select photos in Lightroom Classic</h2>
+        <p>Import the photographs and select the images you want to geotag in the Library module. The selection can contain photos from multiple cameras.</p>
+
+        <h2>4. Match the photos to the track</h2>
+        <p>Choose <strong>Library → Plug-in Extras → Sync selected photos with GPX…</strong>, select the exported GPX file, and review the proposed matches. The plug-in compares each photo’s capture time with timestamped track points.</p>
+
+        <h2>5. Review before writing locations</h2>
+        <p>Check the summary, especially unmatched photos and any images without a UTC offset. Existing GPS metadata is preserved unless you deliberately choose to replace it.</p>
+
+        <div class="tip">
+          <p><strong>Tip:</strong> Before a major trip, take one reference photo of an accurate clock. It gives you a simple way to identify and correct a camera clock that was set incorrectly.</p>
+        </div>
+
+        <h2>Why use the Shutter Trail plug-in?</h2>
+        <p>Lightroom Classic can load a GPX track, but its built-in workflow uses a manually selected time offset. The Shutter Trail plug-in reads the UTC offset stored in each photo, which is especially useful when a selection contains photos from cameras set to different time zones.</p>
+
+        <div class="actions article-cta">
+          <a class="button" href="https://apps.apple.com/us/app/shutter-trail/id6792596736">Download Shutter Trail</a>
+          <a class="button secondary" href="../../lightroom-gpx-sync/">Install the Lightroom plug-in</a>
+        </div>
+      </article>
+    </main>
+    <footer>© 2026 Shutter Trail · <a href="../">More guides</a> · <a href="../../terms/">Terms of Use</a></footer>
+  </div>
+</body>
+</html>
