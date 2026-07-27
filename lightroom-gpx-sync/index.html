@@ -45,7 +45,7 @@
       <article class="card">
         <h2>Why use the plug-in?</h2>
         <p>Lightroom Classic’s built-in Map workflow can load a GPX tracklog, but it does not automatically read the UTC offset embedded in each selected photo. Instead, you adjust photo time with a single manual offset before applying the track locations.</p>
-        <p>That extra step is easy to get wrong, and one offset may not work for a selection containing photos from cameras set to different time zones. The result can be a location matched to the wrong point in the journey.</p>
+        <p>That extra step is easy to get wrong, and one offset may not work for photos captured before and after an international time-zone change. The result can be a location matched to the wrong point in the journey.</p>
         <p>The plug-in reads each photo’s capture time, subsecond value, and embedded UTC offset with ExifTool. If an offset is missing, it asks what to use and suggests the most common offset found in the selection. It then finds the nearest timestamped GPX point, shows a summary for review, and updates the Lightroom catalog without modifying the original photo files.</p>
 
         <h2>Before installing</h2>
